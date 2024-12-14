@@ -101,3 +101,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+
+-- buffers keymaps
+vim.keymap.set('n', '<C-x>', ':bd<CR>', { desc = 'delete buffer' })
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'next buffer' })
+vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { desc = 'previous buffer' })
