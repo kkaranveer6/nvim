@@ -113,24 +113,56 @@ return {
       }
     end,
   },
+
+  -- {
+  --   'CopilotC-Nvim/CopilotChat.nvim',
+  --   branch = 'canary',
+  --   dependencies = {
+  --     { 'github/copilot.vim' }, -- or github/copilot.vim
+  --     { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+  --   },
+  --   build = 'make tiktoken', -- Only on MacOS or Linux
+  --   opts = {
+  --     debug = true, -- Enable debugging
+  --     -- See Configuration section for rest
+  --   },
+  --   -- See Commands section for default commands if you want to lazy load on them
+  --   keys = {
+  --     {
+  --       '<leader>cc',
+  --       ':CopilotChat<cr>',
+  --       desc = 'Open Copilot Chat',
+  --     },
+  --   },
+  -- },
+
   {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
+    'olimorris/codecompanion.nvim',
     dependencies = {
-      { 'github/copilot.vim' }, -- or github/copilot.vim
-      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
     },
-    build = 'make tiktoken', -- Only on MacOS or Linux
-    opts = {
-      debug = true, -- Enable debugging
-      -- See Configuration section for rest
-    },
-    -- See Commands section for default commands if you want to lazy load on them
+    config = true,
     keys = {
       {
         '<leader>cc',
-        ':CopilotChat<cr>',
-        desc = 'Open Copilot Chat',
+        ':CodeCompanionChat<cr>',
+        desc = 'Open Code Chat',
+      },
+      {
+        '<leader>cp',
+        ':CodeCompanion<cr>',
+        desc = 'Open Code Prompt',
+      },
+      {
+        '<leader>ca',
+        ':CodeCompanionActions<cr>',
+        desc = 'Open Code Actions',
+      },
+      {
+        '<leader>cm',
+        ':CodeCompanionCmd<cr>',
+        desc = 'Open Code Commands',
       },
     },
   },
