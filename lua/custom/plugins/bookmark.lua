@@ -2,7 +2,7 @@ return {
   'LintaoAmons/bookmarks.nvim',
   -- recommand, pin the plugin at specific version for stability
   -- backup your db.json file when you want to upgrade the plugin
-  tag = 'v1.4.1',
+  tag = 'v1.4.2',
   dependencies = {
     { 'nvim-telescope/telescope.nvim' },
     { 'stevearc/dressing.nvim' }, -- optional: to have the same UI shown in the GIF
