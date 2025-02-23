@@ -24,9 +24,9 @@ return {
       components = {
         'mode',
         'filename',
-        'git-branch',
         'git-diff',
         '%=',
+        'diagnostics',
         'pos-cursor',
       },
     }

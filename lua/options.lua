@@ -19,7 +19,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = 'n'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -106,3 +106,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', '<C-x>', ':bd<CR>', { desc = 'delete buffer' })
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'next buffer' })
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { desc = 'previous buffer' })
+
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.bo.softtabstop = 2
