@@ -54,10 +54,18 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            theme = 'ivy',
+          },
+        },
         extensions = {
           ['ui-select'] = {
-            require('telescope.themes').get_dropdown(),
+            require('telescope.themes').get_ivy(),
+          },
+          file_browser = {
+            theme = 'ivy',
+            hijack_netrw = true,
           },
         },
       }
