@@ -142,7 +142,28 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
     },
-    config = true,
+    config = function()
+      require('codecompanion').setup {
+        strategies = {
+          chat = {
+            adapter = 'ollama',
+          },
+          inline = {
+            adapter = 'ollama',
+          },
+        },
+        adapters = {
+          ollama = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              env = {
+                url = 'http://localhost:11434',
+                model = 'mistral',
+              },
+            })
+          end,
+        },
+      }
+    end,
     keys = {
       {
         '<leader>cc',
