@@ -1,7 +1,8 @@
 return {
-  'olimorris/onedarkpro.nvim',
+  'catppuccin/nvim',
+  name = 'catppuccin',
   priority = 1000,
   init = function()
-    vim.cmd.colorscheme 'onedark'
+    vim.cmd.colorscheme 'catppuccin'
   end,
 }
