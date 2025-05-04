@@ -25,6 +25,7 @@ return {
         'mode',
         'filename',
         'git-diff',
+        'git-branch',
         '%=',
         'diagnostics',
         'pos-cursor',
