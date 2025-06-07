@@ -121,13 +121,17 @@ return {
       -- add any opts here
       -- for example
       provider = 'claude',
-      claude = {
-        endpoint = 'https://api.anthropic.com',
-        model = 'claude-3-7-sonnet-20250219',
-        timeout = 30000, -- timeout in milliseconds
-        temperature = 0,
-        max_tokens = 4096,
-        disable_tools = true,
+      providers = {
+        claude = {
+          endpoint = 'https://api.anthropic.com',
+          model = 'claude-3-7-sonnet-20250219',
+          timeout = 30000, -- timeout in milliseconds
+          disable_tools = true,
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 4096,
+          },
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -168,58 +172,6 @@ return {
           file_types = { 'markdown', 'Avante' },
         },
         ft = { 'markdown', 'Avante' },
-      },
-    },
-  },
-
-  {
-    'olimorris/codecompanion.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-    config = function()
-      require('codecompanion').setup {
-        strategies = {
-          chat = {
-            adapter = 'ollama',
-          },
-          inline = {
-            adapter = 'ollama',
-          },
-        },
-        adapters = {
-          ollama = function()
-            return require('codecompanion.adapters').extend('ollama', {
-              env = {
-                url = 'http://localhost:11434',
-                model = 'mistral',
-              },
-            })
-          end,
-        },
-      }
-    end,
-    keys = {
-      {
-        '<leader>cc',
-        ':CodeCompanionChat<cr>',
-        desc = 'Open Code Chat',
-      },
-      {
-        '<leader>cp',
-        ':CodeCompanion<cr>',
-        desc = 'Open Code Prompt',
-      },
-      {
-        '<leader>ca',
-        ':CodeCompanionActions<cr>',
-        desc = 'Open Code Actions',
-      },
-      {
-        '<leader>cm',
-        ':CodeCompanionCmd<cr>',
-        desc = 'Open Code Commands',
       },
     },
   },
